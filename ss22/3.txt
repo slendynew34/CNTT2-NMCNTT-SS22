@@ -1,0 +1,18 @@
+# Sử dụng AI an toàn khi xử lý lỗi phần mềm
+## 1. Báo Cáo Phân Tích (Mô Hình IPO)
+-   **Input (Câu trả lời của AI):**
+    -   AI đưa ra thông báo lỗi _"Path not found"_ khi cài đặt Python và đề xuất chạy ngay một đoạn mã lệnh lạ trực tiếp trong Terminal (ví dụ: cấp quyền hệ thống sâu hoặc chỉnh sửa biến môi trường bằng các cú pháp không rõ nguồn gốc).
+-   **Process (Quy trình kiểm chứng):**
+    -   Sử dụng toán tử tìm kiếm chuyên sâu trên Google để kiểm tra tính chính xác và an toàn của câu lệnh:  `[Tên lệnh hoặc cú pháp lỗi] site:stackoverflow.com` hoặc tra cứu trực tiếp tài liệu chính thống trên [Trang chủ Python](https://www.python.org).
+    -   Đối chiếu cấu trúc lệnh xem có chứa các tham số nguy hiểm (như xóa file hệ thống, phân quyền `chmod 777` hoặc thay đổi registry không an toàn) hay không.
+-   **Output (Xác nhận an toàn / không an toàn):**
+    -   **Kết quả:** Xác định lệnh do AI cung cấp là **không an toàn** (hoặc chứa rủi ro _AI Hallucination_ - bịa ra tham số không tồn tại).
+    -   **Hành động:** Từ chối chạy lệnh trực tiếp, chuyển hướng sang giải pháp chuẩn từ tài liệu chính thức.
+## 2. Thiết Kế Câu Lệnh (Prompt) "Hỏi Ngược Lại" AI Để Kiểm Tra Độ An Toàn
+Trước khi thực thi bất kỳ câu lệnh nào do AI cung cấp cho các thao tác hệ thống, hãy sử dụng đoạn Prompt kiểm tra chéo sau đây để ép AI tự phân tích rủi ro:
+```
+Hãy giải thích chi tiết từng thành phần trong câu lệnh vừa cung cấp cho tôi. Cụ thể:
+1. Mỗi tham số trong lệnh có tác động chính xác như thế nào đến hệ điều hành của tôi?
+2. Câu lệnh này có can thiệp vào các quyền quản trị viên (Administrator/Root) hoặc thay đổi cấu hình hệ thống cốt lõi nào không?
+3. Có rủi ro tiềm ẩn hoặc tác dụng phụ nào có thể làm hỏng môi trường hiện tại không? Hãy đưa ra nguồn hoặc căn cứ kỹ thuật cho câu trả lời của bạn.
+```

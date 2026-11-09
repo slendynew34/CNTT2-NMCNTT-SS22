@@ -1,0 +1,20 @@
+2. Quy Trình 3 Bước Tra Cứu Bắt Buộc (Tự Xử Lý 80% Vấn Đề)
+Trước khi được phép tạo Issue hoặc nhờ thành viên khác trong nhóm hỗ trợ, mọi người phải tuân thủ tuần tự quy trình 3 bước sau đây:
+
+Bước 1: Googling (Tra cứu trực quan từ khóa lỗi)
+
+Cách thực hiện: Copy chính xác dòng thông báo lỗi (Error Log) màu đỏ hoặc mã lỗi cốt lõi (bỏ qua các đường dẫn thư mục cá nhân như C:\Users\...).
+
+Mục tiêu: Tìm kiếm nhanh trên Google hoặc Stack Overflow xem đã có ai gặp lỗi tương tự và có sẵn giải pháp hay chưa.
+
+Bước 2: Community Search (Tìm kiếm trong cộng đồng/mã nguồn mở)
+
+Cách thực hiện: Truy cập trực tiếp vào mục Issues của kho lưu trữ GitHub chính thức của công cụ/thư viện đang gặp lỗi (ví dụ: kho lưu trữ Docker, thư viện NPM,...). Sử dụng thanh tìm kiếm để tra cứu từ khóa lỗi.
+
+Mục tiêu: Kiểm tra xem đây có phải là lỗi hệ thống (Bug) đã được ghi nhận hay lỗi cấu hình phiên bản, từ đó tìm kiếm các đoạn mã giải pháp tạm thời (Workaround) mà cộng đồng chia sẻ.
+
+Bước 3: AI Translation & Analysis (Sử dụng AI phân tích và dịch ngữ cảnh)
+
+Cách thực hiện: Đưa đoạn thông báo lỗi kèm theo đoạn mã nguồn gây lỗi vào các công cụ AI (như ChatGPT, Gemini) với câu lệnh rõ ràng: "Hãy giải thích nguyên nhân gốc rễ (root cause) của lỗi này và đề xuất tối thiểu 2 phương án khắc phục an toàn."
+
+Mục tiêu: Hiểu rõ bản chất vấn đề, dịch các thuật ngữ kỹ thuật phức tạp sang tiếng Việt để có hướng xử lý chính xác nhất.
